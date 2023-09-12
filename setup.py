@@ -9,7 +9,6 @@ setup(
     install_requires=[
         'pika>=1.2.0',
         'PyJWT>=2.3.0',
-        'psycopg2>=2.9.1',
         # Note: 'logging', 'json', 'os', and 'http.server' are part of the Python standard library and do not need to be listed as dependencies.
     ],
 )
