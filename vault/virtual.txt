@@ -1,0 +1,32 @@
+  285  source env/bin/deactivate
+  286  source env/bin/deactivate.nu
+  287  clear
+  288  conda deactivate
+  289  deactivate
+  290  clear
+  291  virtualenv -p python3 .venv
+  292  source .venv/bin/activate
+
+CommandError: [Errno 13] Permission denied: '/adminTraining'
+That error means wrong directory
+
+error fixing
+  File "/home/egovridc/PycharmProjects/Pyshop/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: permission denied for table django_migrations
+
+ >>>>>>>>>>
+ GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE django_migrations TO your_django_user;
+
+
+error
+
+ProgrammingError at /products/
+permission denied for table products_product
+
+fixes
+-> just grants all permissions
+
+GRANT USAGE, SELECT ON SEQUENCE products_secrets_id_seq TO your_django_user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO your_user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO PUBLIC;

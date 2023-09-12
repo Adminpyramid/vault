@@ -1,0 +1,30 @@
+Clear     database based on postgres
+
+#backup data
+pg_dump -U myuser -d mydatabase -f mydatabase_backup.sql
+
+# postgres
+
+SELECT rolname FROM pg_roles;
+
+# seve the role in file like role_names.txt
+
+#!/bin/bash
+
+while read -r role_name; do
+    psql -U postgres -c "DROP ROLE IF EXISTS \"$role_name\";"
+done < role_names.txt
+
+If "Av8RN" is part of your data or an identifier within
+ your database, you should ensure that it is correctly
+ used within your SQL queries, including proper quoting and escaping,
+  as needed
+
+similar to Y8eR04
+
+
+when you forget single qoute
+
+We ran into a problem and could not continue: 1 error occurred: * failed to
+execute query: ERROR: trailing junk after
+numeric literal at or near "10S" (SQLSTATE 42601)
